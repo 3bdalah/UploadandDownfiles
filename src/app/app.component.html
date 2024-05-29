@@ -1,0 +1,24 @@
+<div class="container">
+ <div class="mt-3 bg-black text-white rounded">
+    <h1> File uploaded & Downloaded</h1>
+    <p>with api and file </p>
+ </div>
+ <div class="row pt-3">
+    <div class="col-3 mb-3">
+     <label for="formfile" class="form-label">choose file</label>
+     <input type="file" class="form-control" id="formFile" (change)="uploadImage($event)" [(ngModel)]="inputData"/>
+    </div>
+ </div>
+ <div class="row gap-3 justifiy-content-between">
+   @for(file of uploadFileNames; track $index){
+    <div class="card col-md-3">
+     <img [src]="fileUrl + file" alt="card image " class="card-img-top " width="150"/> 
+     <div class="car-body ">
+    <h2 class="card-title">test title</h2>
+    <p class="card-context"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus deleniti harum, iure blanditiis iste incidunt dolorem. Enim alias sit nam et provident odio maiores accusamus quasi? Aperiam fugit atque illum.</p>
+    <button class="btn btn-primary" (click)="downloadFile(file)">download file</button>
+     </div>
+    </div>
+   }
+ </div>
+</div>
